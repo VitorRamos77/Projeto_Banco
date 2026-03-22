@@ -25,3 +25,32 @@ void Conta::depositar(float valorADepositar){
 
     saldo += valorADepositar;
 }
+
+float Conta::recuperaSaldo(){
+    return saldo;
+}
+
+void Conta::definirNomeTitular(std::string nome){
+    nomeTitular = nome;
+}
+
+void Conta::definirCpfTitular(std::string cpf){
+    cpfTitular = cpf;
+}
+
+void Conta::definirNumero(std::string num){
+    numero = num;
+}
+
+string Conta::recuperaNumero(){
+    return numero;
+}
+
+string Conta::recuperaCpfTitular(){
+    return cpfTitular;
+}
+
+string Conta::recuperaNomeTitular(){
+    return nomeTitular;
+}
+
