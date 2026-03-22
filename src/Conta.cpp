@@ -1,5 +1,6 @@
 #include "Conta.hpp"
 #include <iostream>
+#include "Titular.hpp"
 
 using namespace std;
 
@@ -9,13 +10,11 @@ int Conta::recuperaNumeroDeContas(){
     return numeroDeContas;
 }
 
-Conta::Conta(std::string numero, std::string nomeTitular, std::string cpfTitular):
+Conta::Conta(std::string numero, Titular titular):
 numero(numero),
-nomeTitular(nomeTitular),
-cpfTitular(cpfTitular),
+titular(titular),
 saldo(0)
 {
-    verificaTamanhoDoNome(nomeTitular);
     numeroDeContas++;
 }
 
@@ -58,17 +57,3 @@ string Conta::recuperaNumero(){
     return numero;
 }
 
-string Conta::recuperaCpfTitular(){
-    return cpfTitular;
-}
-
-string Conta::recuperaNomeTitular(){
-    return nomeTitular;
-}
-
-void Conta::verificaTamanhoDoNome(string nomeTitular){
-    if(nomeTitular.size() < 5){
-        cout << "Nome muito curto!" << endl;
-        exit(1);
-    }
-}
