@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-struct Conta
+class Conta
 {
 private:
     std::string numero;
@@ -12,7 +12,7 @@ private:
 public:
     void sacar(float valorASacar);
     void depositar(float valorADepositar);
-    float recuperaSaldo();
+    float recuperaSaldo() const;
     void definirNomeTitular(std::string nome);
     void definirCpfTitular(std::string cpfTitular);
     void definirNumero(std::string numero);

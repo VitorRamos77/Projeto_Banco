@@ -3,6 +3,10 @@
 
 using namespace std;
 
+void ExibeSaldo(const Conta& conta){
+    cout << "O saldo da conta eh: " << conta.recuperaSaldo() << endl;
+}
+
 void Conta::sacar(float valorASacar){
     if(valorASacar < 0){
         cout << "Não pode sacar valor negativo." << endl;
@@ -26,7 +30,7 @@ void Conta::depositar(float valorADepositar){
     saldo += valorADepositar;
 }
 
-float Conta::recuperaSaldo(){
+float Conta::recuperaSaldo() const{
     return saldo;
 }
 
