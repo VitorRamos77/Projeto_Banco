@@ -1,16 +1,17 @@
 #pragma once
 #include <string>
+#include "Cpf.hpp"
 
 using namespace std;
 
 class Titular
 {
 private:
-    string cpf;
+    Cpf cpf;
     string nome;
 
 public:
-    Titular(string cpf, string nome);
+    Titular(Cpf cpf, string nome);
 
 private:
     void verificaTamanhoDoNome();

@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-Titular::Titular(string cpf, string nome):
+Titular::Titular(Cpf cpf, string nome):
 cpf(cpf),
 nome(nome)
 {
