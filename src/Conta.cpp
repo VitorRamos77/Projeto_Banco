@@ -3,6 +3,10 @@
 
 using namespace std;
 
+Conta::Conta(std::string numero, std::string nomeTitular, std::string cpfTitular):numero(numero),nomeTitular(nomeTitular),cpfTitular(cpfTitular),saldo(0)
+{
+}
+
 void ExibeSaldo(const Conta& conta){
     cout << "O saldo da conta eh: " << conta.recuperaSaldo() << endl;
 }
