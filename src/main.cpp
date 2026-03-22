@@ -12,4 +12,13 @@ int main() {
 
     cout << "Uma conta:" << umaConta.recuperaSaldo() << endl;
 
+    Conta umaOutraConta("654321", "Dias", "109.876.543-21");
+
+    umaOutraConta.depositar(400);
+    umaOutraConta.sacar(100);
+
+    cout << "Uma OutrcaConta:" << umaOutraConta.recuperaSaldo() << endl;
+
+    cout << "Numeor de contas: " << Conta::recuperaNumeroDeContas() << endl;
+
 }

@@ -3,8 +3,24 @@
 
 using namespace std;
 
-Conta::Conta(std::string numero, std::string nomeTitular, std::string cpfTitular):numero(numero),nomeTitular(nomeTitular),cpfTitular(cpfTitular),saldo(0)
+int Conta::numeroDeContas = 0;
+
+int Conta::recuperaNumeroDeContas(){
+    return numeroDeContas;
+}
+
+Conta::Conta(std::string numero, std::string nomeTitular, std::string cpfTitular):
+numero(numero),
+nomeTitular(nomeTitular),
+cpfTitular(cpfTitular),
+saldo(0)
 {
+    verificaTamanhoDoNome(nomeTitular);
+    numeroDeContas++;
+}
+
+Conta::~Conta(){
+    numeroDeContas--;
 }
 
 void ExibeSaldo(const Conta& conta){
@@ -38,18 +54,6 @@ float Conta::recuperaSaldo() const{
     return saldo;
 }
 
-void Conta::definirNomeTitular(std::string nome){
-    nomeTitular = nome;
-}
-
-void Conta::definirCpfTitular(std::string cpf){
-    cpfTitular = cpf;
-}
-
-void Conta::definirNumero(std::string num){
-    numero = num;
-}
-
 string Conta::recuperaNumero(){
     return numero;
 }
@@ -62,3 +66,9 @@ string Conta::recuperaNomeTitular(){
     return nomeTitular;
 }
 
+void Conta::verificaTamanhoDoNome(string nomeTitular){
+    if(nomeTitular.size() < 5){
+        cout << "Nome muito curto!" << endl;
+        exit(1);
+    }
+}
